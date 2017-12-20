@@ -1,5 +1,4 @@
-/*
- * Copyright (C) 2017 Robert Nelson <robertcnelson@gmail.com>
+/* Copyright (C) 2017 Robert Nelson <robertcnelson@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 as
@@ -17,7 +16,7 @@
 	fragment@0 {
 		target = <&am33xx_pinmux>;
 		__overlay__ {
-			uart1_pins: pinmux_uart1_pins {
+			uart1_flwctrl_pins: pinmux_uart1_flwctrl_pins {
 				pinctrl-single,pins = <
 					AM33XX_IOPAD(0x0984, PIN_OUTPUT_PULLDOWN | MUX_MODE0)
 					AM33XX_IOPAD(0x0980, PIN_INPUT_PULLUP	 | MUX_MODE0)
@@ -53,8 +52,8 @@
 		__overlay__ {
 
 			status = "okay";
-			pinctrl-names = "uart";
-			pinctrl-0 = <&uart1_pins>;
+			pinctrl-names = "default";
+			pinctrl-0 = <&uart1_flwctrl_pins>;
 			
 			#address-cells = <1>;
 			#size-cells = <0>;
@@ -65,4 +64,3 @@
 		};
 	};
 };
-
