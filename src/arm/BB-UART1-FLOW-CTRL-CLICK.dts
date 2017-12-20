@@ -55,16 +55,13 @@
 			status = "okay";
 			pinctrl-names = "uart";
 			pinctrl-0 = <&uart1_flwctrl_pins>;
-
+			
 			#address-cells = <1>;
 			#size-cells = <0>;
+			
+			cts-gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
+			rts-gpios = <&gpio 13 GPIO_ACTIVE_LOW>;
 
-			channel@0 {
-				status = "disabled";
-			};
-			channel@1 {
-				status = "disabled";
-			};
 		};
 	};
 };
